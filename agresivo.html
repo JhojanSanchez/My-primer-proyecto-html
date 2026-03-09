@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkateShop - Tienda de Patines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="featured-products2">
+        <div class="container">
+            <h2 class="section-title">Patines agresivo</h2>
+            <div class="products-grid">
+                <!-- Producto 1  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto1.jpg" alt="Patín agresivo frontal" class="active">
+                        <img src="img/producto1-2.jpg" alt="Patín agresivo lateral">
+                        <img src="img/producto1-3.jpg" alt="Patín agresivo detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aeon Richie Eisler 60</h3>
+                        <span class="price">$1'960.000</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto1">Talla:</label>
+                            <select id="size-producto1" class="select-talla">
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto1">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto5.jpg" alt="Patín agresivo frontal" class="active">
+                        <img src="img/producto5-2.jpg" alt="Patín agresivo lateral">
+                        <img src="img/producto5-3.jpg" alt="Patín agresivo detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sway Carlos Bernal II</h3>
+                        <span class="price">$1'449.999</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto5">Talla:</label>
+                            <select id="size-producto5" class="select-talla">
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto5">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto6.jpg" alt="Patín agresivo frontal" class="active">
+                        <img src="img/producto6-2.jpg" alt="Patín agresivo lateral">
+                        <img src="img/producto6-3.jpg" alt="Patín agresivo detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aeon Nick Lomax Pro II 60</h3>
+                        <span class="price">$1'606.000</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto6">Talla:</label>
+                            <select id="size-producto6" class="select-talla">
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto6">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto7.jpg" alt="PPatín agresivo frontal" class="active">
+                        <img src="img/producto7-2.jpg" alt="Patín agresivo lateral">
+                        <img src="img/producto7-3.jpg" alt="Patín agresivo detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aeon Mery Muñoz II Pro 60</h3>
+                        <span class="price">$1'600.200</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto7">Talla:</label>
+                            <select id="size-producto7" class="select-talla">
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto7">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart-system.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

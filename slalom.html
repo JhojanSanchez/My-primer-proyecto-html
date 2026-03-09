@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkateShop - Tienda de Patines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="featured-products3">
+        <div class="container">
+            <h2 class="section-title">Patines slalom</h2>
+            <div class="products-grid">
+                <!-- Producto 1  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto2.jpg" alt="Patín slalom frontal" class="active">
+                        <img src="img/producto2-2.jpg" alt="Patín slalom lateral">
+                        <img src="img/producto2-3.jpg" alt="Patín slalom detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Imperial Violet 80</h3>
+                        <span class="price">$849.999</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto2">Talla:</label>
+                            <select id="size-producto2" class="select-talla">
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto2">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto8.jpg" alt="Patín slalom frontal" class="active">
+                        <img src="img/producto8-2.jpg" alt="Patín slalom lateral">
+                        <img src="img/producto8-3.jpg" alt="Patín slalom detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sway Carlos Bernal II</h3>
+                        <span class="price">$1'449.999</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto8">Talla:</label>
+                            <select id="size-producto8" class="select-talla">
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto8">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto9.jpg" alt="Patín slalom frontal" class="active">
+                        <img src="img/producto9-2.jpg" alt="Patín slalom lateral">
+                        <img src="img/producto9-3.jpg" alt="Patín slalom detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Storm Meteor 80</h3>
+                        <span class="price">$906.000</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto9">Talla:</label>
+                            <select id="size-producto9" class="select-talla">
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto9">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto10.jpg" alt="PPatín slalom frontal" class="active">
+                        <img src="img/producto10-2.jpg" alt="Patín slalom lateral">
+                        <img src="img/producto10-3.jpg" alt="Patín slalom detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Storm Nicoly Pro 80</h3>
+                        <span class="price">$1'100.200</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto10">Talla:</label>
+                            <select id="size-producto10" class="select-talla">
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto10">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart-system.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

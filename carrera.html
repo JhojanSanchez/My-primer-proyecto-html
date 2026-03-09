@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkateShop - Tienda de Patines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <section class="featured-products5">
+        <div class="container">
+            <h2 class="section-title">Patines para carrera</h2>
+            <div class="products-grid">
+                <!-- Producto 1  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto4.jpg" alt="Patín carrera frontal" class="active">
+                        <img src="img/producto4-2.jpg" alt="Patín carrera lateral">
+                        <img src="img/producto4-3.jpg" alt="Patín carrera detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dragon Black 110</h3>
+                        <span class="price">$2'600.200</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto4">Talla:</label>
+                            <select id="size-producto4" class="select-talla">
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto4">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto14.jpg" alt="Patín carrera frontal" class="active">
+                        <img src="img/producto14-2.jpg" alt="Patín carrera lateral">
+                        <img src="img/producto14-3.jpg" alt="Patín carrera detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dragon White 110</h3>
+                        <span class="price">$2'449.999</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto14">Talla:</label>
+                            <select id="size-producto14" class="select-talla">
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto14">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto15.jpg" alt="Patín carrera frontal" class="active">
+                        <img src="img/producto15-2.jpg" alt="Patín carrera lateral">
+                        <img src="img/producto15-3.jpg" alt="Patín carrera detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Arise Marathon</h3>
+                        <span class="price">$2'206.000</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto15">Talla:</label>
+                            <select id="size-producto15" class="select-talla">
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto15">Añadir al carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4  -->
+                <div class="product-item">
+                    <div class="product-carousel">
+                        <img src="img/producto16.jpg" alt="Patín carrer frontal" class="active">
+                        <img src="img/producto16-2.jpg" alt="Patín carrera lateral">
+                        <img src="img/producto16-3.jpg" alt="Patín carrera detalle">
+                        <button class="carousel-prev">&lt;</button>
+                        <button class="carousel-next">&gt;</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Storm Nicoly Pro 80</h3>
+                        <span class="price">$2'100.200</span>
+                        <div class="producto-tallas">
+                            <label for="size-producto16">Talla:</label>
+                            <select id="size-producto16" class="select-talla">
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                            </select>
+                        </div>
+                        <button class="btn" data-product-id="producto16">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart-system.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
