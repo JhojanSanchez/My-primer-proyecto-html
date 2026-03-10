@@ -206,5 +206,34 @@ if (formularioCheckout) {
     });
 }
 
+// Lógica para el menú móvil en la tienda
+function initMobileMenu() {
+    const wrapper = document.querySelector('.wrapper');
+    if (!wrapper) return;
+
+    // Crear el botón de hamburguesa si no existe
+    if (!document.querySelector('.mobile-menu-toggle')) {
+        const toggle = document.createElement('div');
+        toggle.className = 'mobile-menu-toggle';
+        toggle.innerHTML = '<i class="bi bi-list"></i>';
+        document.body.prepend(toggle);
+
+        const aside = document.querySelector('aside');
+        toggle.addEventListener('click', () => {
+            aside.classList.toggle('active');
+            toggle.innerHTML = aside.classList.contains('active') ? '<i class="bi bi-x-lg"></i>' : '<i class="bi bi-list"></i>';
+        });
+
+        // Cerrar al hacer clic en un link
+        document.querySelectorAll('.boton-menu').forEach(btn => {
+            btn.addEventListener('click', () => {
+                aside.classList.remove('active');
+                toggle.innerHTML = '<i class="bi bi-list"></i>';
+            });
+        });
+    }
+}
+
 // Inicializar página
 cargarProductosCarrito();
+initMobileMenu();

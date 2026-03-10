@@ -166,4 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     loadProducts(initialCategory);
+    
+    // Si estamos en index_car.html, inicializar el menú móvil
+    if (document.querySelector('#contenedor-productos')) {
+        if (typeof initMobileMenu === 'function') initMobileMenu();
+    }
 });
