@@ -323,15 +323,15 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
-                            <input type="text" placeholder="Nombre" required>
+                            <input type="text" id="contact-name" placeholder="Nombre" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email" required>
+                            <input type="email" id="contact-email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Mensaje" required></textarea>
+                            <textarea id="contact-message" placeholder="Mensaje" required></textarea>
                         </div>
                         <button type="submit" class="btn">Enviar mensaje</button>
                     </form>
@@ -357,6 +357,9 @@
     <script src="js/cart-system.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
     <script src="js/script.js"></script>
 
 

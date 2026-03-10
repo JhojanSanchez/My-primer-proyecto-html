@@ -1,32 +1,48 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login-form');
     const errorMsg = document.getElementById('error-msg');
 
     if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
+        loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Mock authentication
-            if (username === 'admin' && password === 'admin123') {
-                // Save user state
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('username', username);
-                
-                // Redirect to home
-                window.location.href = 'index.html';
-            } else {
-                // Show error
-                errorMsg.style.display = 'block';
-                
-                // Shake animation
-                loginForm.style.animation = 'shake 0.5s ease';
-                setTimeout(() => {
-                    loginForm.style.animation = '';
-                }, 500);
+            // Autenticación con Supabase
+            async function authenticate() {
+                try {
+                    const { data, error } = await db
+                        .from('usuarios')
+                        .select('*')
+                        .eq('nombre_usuario', username)
+                        .eq('contrasena', password)
+                        .single();
+
+                    if (data) {
+                        // Guardar estado del usuario
+                        localStorage.setItem('isLoggedIn', 'true');
+                        localStorage.setItem('username', username);
+
+                        // Redirigir al inicio
+                        window.location.href = 'index.html';
+                    } else {
+                        // Mostrar error
+                        errorMsg.style.display = 'block';
+
+                        // Animación de error
+                        loginForm.style.animation = 'shake 0.5s ease';
+                        setTimeout(() => {
+                            loginForm.style.animation = '';
+                        }, 500);
+                    }
+                } catch (err) {
+                    console.error('Error de conexión:', err);
+                    alert('Error al conectar con la base de datos');
+                }
             }
+
+            authenticate();
         });
     }
 });

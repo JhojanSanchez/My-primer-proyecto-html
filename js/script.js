@@ -206,6 +206,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     `;
     document.head.appendChild(searchStyle);
+
+    // Formulario de Contacto - Integración con Supabase
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+            // Deshabilitar botón mientras envía
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Enviando...';
+
+            try {
+                const { data, error } = await db
+                    .from('contactos')
+                    .insert([
+                        { nombre: name, email: email, mensaje: message }
+                    ]);
+
+                if (error) throw error;
+
+                alert('¡Gracias por tu mensaje! Lo recibimos correctamente.');
+                contactForm.reset();
+            } catch (err) {
+                console.error('Error al enviar mensaje:', err);
+                alert('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Enviar mensaje';
+            }
+        });
+    }
 });
 
 // JavaScript - Control manual + automático
