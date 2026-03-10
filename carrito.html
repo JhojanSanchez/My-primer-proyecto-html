@@ -74,11 +74,54 @@
                 <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por comprar en SkateShop. No
                     olvides "Explora el mundo sobre ruedas" <i class="bi bi-emoji-wink"></i></p>
 
+                <!-- Formulario de Checkout -->
+                <div id="checkout-form-container" class="checkout-form-container disabled">
+                    <h3 class="titulo-checkout">Datos del Comprador</h3>
+                    <form id="checkout-form">
+                        <div class="form-group">
+                            <label for="checkout-nombre">Nombre Completo</label>
+                            <input type="text" id="checkout-nombre" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-email">Correo Electrónico</label>
+                            <input type="email" id="checkout-email" required placeholder="juan@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-telefono">Teléfono</label>
+                            <input type="tel" id="checkout-telefono" required placeholder="300 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-direccion">Dirección de Envío</label>
+                            <input type="text" id="checkout-direccion" required placeholder="Calle 123 #45-67">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout-metodo-pago">Método de Pago</label>
+                            <select id="checkout-metodo-pago" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="tarjeta">Tarjeta (5% de descuento)</option>
+                                <option value="efectivo">Efectivo (2% de descuento)</option>
+                            </select>
+                        </div>
+                        <div class="resumen-final">
+                            <p>Subtotal: <span id="resumen-subtotal">$0</span></p>
+                            <p>Descuento: <span id="resumen-descuento">-$0</span></p>
+                            <p class="total-final">Total a Pagar: <span id="resumen-total">$0</span></p>
+                        </div>
+                        <div class="checkout-acciones">
+                            <button type="button" id="boton-cancelar-checkout" class="btn-secundario">Regresar al
+                                carrito</button>
+                            <button type="submit" class="btn-principal">Confirmar Pedido</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </main>
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./js/supabase-config.js"></script>
     <script src="./js/carrito.js"></script>
 </body>
 

@@ -28,37 +28,39 @@
             <nav>
                 <ul class="menu">
                     <li>
+                        <a class="boton-menu boton-carrito" href="./carrito.html"
+                            style="margin-top: 0; background-color: var(--primary-color); border-radius: 1rem; margin-bottom: 1rem;">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                    <li>
                         <button id="todos" class="boton-menu boton-categoria active"><i
                                 class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
                     </li>
                     <li>
-                        <button id="Agresivos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
+                        <button id="agresivo" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
                             Agresivos</button>
                     </li>
                     <li>
-                        <button id="Slalom" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
+                        <button id="slalom" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
                             Slalom</button>
                     </li>
                     <li>
-                        <button id="Freeskate" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
+                        <button id="freeskate" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
                             Freeskate</button>
                     </li>
                     <li>
-                        <button id="Carrera" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
+                        <button id="carrera" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>
                             Carrera</button>
                     </li>
                     <li>
-                        <button id="Accesorios" class="boton-menu boton-categoria"><i
+                        <button id="accesorios" class="boton-menu boton-categoria"><i
                                 class="bi bi-hand-index-thumb"></i> Accesorios</button>
                     </li>
                     <li>
-                        <a class="boton-menu boton-categoria" href="./index.html"> <!-- carrito.html -->
-                            <i class=""> Volver a la tienda </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="boton-menu boton-carrito" href="./carrito.html"><!-- carrito.html -->
-                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        <a class="boton-menu" href="./index.html"
+                            style="margin-top: 1rem; border-top: 1px solid var(--clr-gray);">
+                            <i class="bi bi-arrow-return-left"></i> Volver a la tienda
                         </a>
                     </li>
                 </ul>
@@ -74,8 +76,10 @@
             </div>
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./js/supabase-config.js"></script>
     <script src="./js/cart-system.js"></script>
-    <script src="./js/main.js"></script><!-- main.js -->
+    <script src="./js/products.js"></script>
 </body>
 
 </html>

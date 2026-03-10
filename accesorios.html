@@ -16,99 +16,8 @@
         <div class="container">
             <h2 class="section-title">Accesorios</h2>
             <div class="products-grid">
-                <!-- Producto 1  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto17.jpg" alt="Patín carrera frontal" class="active">
-                        <img src="img/producto17-2.jpg" alt="Patín carrera lateral">
-                        <img src="img/producto17-3.jpg" alt="Patín carrera detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Elite Yellow (include removable peak)</h3>
-                        <span class="price">$350.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto17">Talla:</label>
-                            <select id="size-producto17" class="select-talla">
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto17">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 2 -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto18.jpg" alt="Patín carrera frontal" class="active">
-                        <img src="img/producto18-2.jpg" alt="Patín carrera lateral">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Street Knee Pad</h3>
-                        <span class="price">$249.999</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto18">Talla:</label>
-                            <select id="size-producto18" class="select-talla">
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto18">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 3  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto19.jpg" alt="Patín carrera frontal" class="active">
-                        <img src="img/producto19-2.jpg" alt="Patín carrera lateral">
-                        <img src="img/producto19-3.jpg" alt="Patín carrera detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Carrera Glove</h3>
-                        <span class="price">$360.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto19">Talla:</label>
-                            <select id="size-producto19" class="select-talla">
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto19">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 4  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto20.jpg" alt="Patín carrer frontal" class="active">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Aly Dual Set</h3>
-                        <span class="price">$520.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto20">Talla:</label>
-                            <select id="size-producto20" class="select-talla">
-                                <option value="Única">Única</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto20">Añadir al carrito</button>
-                    </div>
-                </div>
+                <!-- Los productos se cargan dinámicamente desde Supabase -->
+                <p>Cargando accesorios...</p>
             </div>
         </div>
     </section>
@@ -126,8 +35,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
     <script src="js/cart-system.js"></script>
+    <script src="js/products.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/script.js"></script>

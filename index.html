@@ -82,115 +82,8 @@
         <div class="container">
             <h2 class="section-title">Productos Destacados</h2>
             <div class="products-grid">
-                <!-- Producto 1  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto1.jpg" alt="Patín agresivo frontal" class="active">
-                        <img src="img/producto1-2.jpg" alt="Patín agresivo lateral">
-                        <img src="img/producto1-3.jpg" alt="Patín agresivo detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Aeon Richie Eisler 60</h3>
-                        <span class="price">$1'960.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto1">Talla:</label>
-                            <select id="size-producto1" class="select-talla">
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto1">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 2 -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto2.jpg" alt="Patín slalom frontal" class="active">
-                        <img src="img/producto2-2.jpg" alt="Patín slalom lateral">
-                        <img src="img/producto2-3.jpg" alt="Patín slalom detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Imperial Violet 80</h3>
-                        <span class="price">$849.999</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto2">Talla:</label>
-                            <select id="size-producto2" class="select-talla">
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto2">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 3  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto3.jpg" alt="Patín freeskate frontal" class="active">
-                        <img src="img/producto3-2.jpg" alt="Patín freeskate lateral">
-                        <img src="img/producto3-3.jpg" alt="Patín freeskate detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Next Grapefruit 100</h3>
-                        <span class="price">$1'196.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto3">Talla:</label>
-                            <select id="size-producto3" class="select-talla">
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto3">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 4  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto4.jpg" alt="Patín carrera frontal" class="active">
-                        <img src="img/producto4-2.jpg" alt="Patín carrera lateral">
-                        <img src="img/producto4-3.jpg" alt="Patín carrera detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Dragon Black 110</h3>
-                        <span class="price">$2'600.200</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto4">Talla:</label>
-                            <select id="size-producto4" class="select-talla">
-                                <option value="37">37</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto4">Añadir al carrito</button>
-                    </div>
-                </div>
+                <!-- Los productos se cargan dinámicamente desde Supabase -->
+                <p>Cargando productos destacados...</p>
             </div>
         </div>
     </section>
@@ -353,13 +246,13 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/cart-system.js"></script>
-    <script src="js/components/header.js"></script>
-    <script src="js/components/footer.js"></script>
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase-config.js"></script>
+    <script src="js/cart-system.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/components/header.js"></script>
+    <script src="js/components/footer.js"></script>
     <script src="js/script.js"></script>
 
 

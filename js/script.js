@@ -245,57 +245,76 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // JavaScript - Control manual + automático
-document.querySelectorAll('.product-carousel').forEach(carousel => {
-    const images = carousel.querySelectorAll('img');
-    const prevBtn = carousel.querySelector('.carousel-prev');
-    const nextBtn = carousel.querySelector('.carousel-next');
-    let currentIndex = 0;
-    let intervalId;
+function initCarousels() {
+    document.querySelectorAll('.product-carousel').forEach(carousel => {
+        // Evitar doble inicialización
+        if (carousel.dataset.initialized) return;
+        carousel.dataset.initialized = "true";
 
-    function showImage(index) {
-        images.forEach(img => img.classList.remove('active'));
-        images[index].classList.add('active');
-    }
+        const images = carousel.querySelectorAll('img');
+        if (images.length <= 1) return; // No necesita carrusel si hay una sola imagen
 
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        let currentIndex = 0;
+        let intervalId;
 
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    }
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+        }
 
-    // Automático
-    function startCarousel() {
-        intervalId = setInterval(nextImage, 4000);
-    }
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
 
-    // Manual
-    nextBtn.addEventListener('click', () => {
-        clearInterval(intervalId);
-        nextImage();
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Automático
+        function startCarousel() {
+            intervalId = setInterval(nextImage, 4000);
+        }
+
+        // Manual
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                clearInterval(intervalId);
+                nextImage();
+                startCarousel();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                clearInterval(intervalId);
+                prevImage();
+                startCarousel();
+            });
+        }
+
+        // Iniciar
         startCarousel();
+
+        // Pausa al interactuar
+        carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
+        carousel.addEventListener('mouseleave', startCarousel);
     });
+}
 
-    prevBtn.addEventListener('click', () => {
-        clearInterval(intervalId);
-        prevImage();
-        startCarousel();
-    });
-
-    // Iniciar
-    startCarousel();
-
-    // Pausa al interactuar
-    carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
-    carousel.addEventListener('mouseleave', startCarousel);
-});
+// Inicializar carruseles estáticos existentes (si los hay)
+initCarousels();
 
 // Lightbox para productos
-document.addEventListener('DOMContentLoaded', () => {
+function initLightbox() {
     const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
     const lightboxImg = document.getElementById('lightbox-image');
     const closeBtn = document.querySelector('.close');
     const prevBtn = document.querySelector('.lightbox-prev');
@@ -304,49 +323,71 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentProductImages = [];
     let currentIndex = 0;
 
-    // Abrir lightbox al hacer clic en imágenes de productos
-    document.querySelectorAll('.product-carousel img, .product-item img').forEach(img => {
-        img.addEventListener('click', function () {
-            const productContainer = this.closest('.product-item');
-            currentProductImages = Array.from(productContainer.querySelectorAll('img')).map(img => ({
-                src: img.src,
-                alt: img.alt
-            }));
-            currentIndex = currentProductImages.findIndex(item => item.src === this.src);
+    // Delegación de eventos para abrir lightbox (funciona con productos dinámicos)
+    document.addEventListener('click', (e) => {
+        const img = e.target.closest('.product-carousel img, .product-item img');
+        if (img && !e.target.closest('.carousel-prev') && !e.target.closest('.carousel-next')) {
+            const productContainer = img.closest('.product-item');
+            if (!productContainer) return;
+
+            // Obtener todas las imágenes válidas del carrusel de este producto
+            currentProductImages = Array.from(productContainer.querySelectorAll('.product-carousel img'))
+                .filter(i => i.style.display !== 'none')
+                .map(i => ({
+                    src: i.src,
+                    alt: i.alt
+                }));
+
+            if (currentProductImages.length === 0) {
+                currentProductImages = [{ src: img.src, alt: img.alt }];
+            }
+
+            currentIndex = currentProductImages.findIndex(item => item.src === img.src);
+            if (currentIndex === -1) currentIndex = 0;
 
             lightbox.style.display = 'flex';
             updateLightboxImage();
-        });
+        }
     });
 
     // Actualizar imagen del lightbox
     function updateLightboxImage() {
-        lightboxImg.src = currentProductImages[currentIndex].src;
-        lightboxImg.alt = currentProductImages[currentIndex].alt;
+        if (currentProductImages[currentIndex]) {
+            lightboxImg.src = currentProductImages[currentIndex].src;
+            lightboxImg.alt = currentProductImages[currentIndex].alt;
+        }
     }
 
     // Navegación
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % currentProductImages.length;
-        updateLightboxImage();
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % currentProductImages.length;
+            updateLightboxImage();
+        });
+    }
 
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + currentProductImages.length) % currentProductImages.length;
-        updateLightboxImage();
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + currentProductImages.length) % currentProductImages.length;
+            updateLightboxImage();
+        });
+    }
 
     // Cerrar lightbox
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+    }
 
     // Teclado
     document.addEventListener('keydown', (e) => {
         if (lightbox.style.display === 'flex') {
-            if (e.key === 'ArrowRight') nextBtn.click();
-            if (e.key === 'ArrowLeft') prevBtn.click();
-            if (e.key === 'Escape') closeBtn.click();
+            if (e.key === 'ArrowRight' && nextBtn) nextBtn.click();
+            if (e.key === 'ArrowLeft' && prevBtn) prevBtn.click();
+            if (e.key === 'Escape' && closeBtn) closeBtn.click();
         }
     });
 
@@ -356,7 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
             lightbox.style.display = 'none';
         }
     });
-});
+}
+
+// Inicializar lightbox
+document.addEventListener('DOMContentLoaded', initLightbox);
 
 // Carga diferida para mejorar rendimiento
 document.addEventListener("DOMContentLoaded", function () {

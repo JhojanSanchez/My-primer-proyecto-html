@@ -16,121 +16,8 @@
         <div class="container">
             <h2 class="section-title">Patines Freeskate</h2>
             <div class="products-grid">
-                <!-- Producto 1  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto3.jpg" alt="Patín freeskate frontal" class="active">
-                        <img src="img/producto3-2.jpg" alt="Patín freeskate lateral">
-                        <img src="img/producto3-3.jpg" alt="Patín freeskate detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Next Grapefruit 100</h3>
-                        <span class="price">$1'196.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto3">Talla:</label>
-                            <select id="size-producto3" class="select-talla">
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto3">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 2 -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto11.jpg" alt="Patín freeskate frontal" class="active">
-                        <img src="img/producto11-2.jpg" alt="Patín freeskate lateral">
-                        <img src="img/producto11-3.jpg" alt="Patín freeskate detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Next 30th Anniversary 125</h3>
-                        <span class="price">$1'449.999</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto11">Talla:</label>
-                            <select id="size-producto11" class="select-talla">
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto11">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 3  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto12.jpg" alt="Patín freeskate frontal" class="active">
-                        <img src="img/producto12-2.jpg" alt="Patín freeskate lateral">
-                        <img src="img/producto12-3.jpg" alt="Patín freeskate detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Next Mustard 125</h3>
-                        <span class="price">$1'206.000</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto12">Talla:</label>
-                            <select id="size-producto12" class="select-talla">
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto12">Añadir al carrito</button>
-                    </div>
-                </div>
-
-                <!-- Producto 4  -->
-                <div class="product-item">
-                    <div class="product-carousel">
-                        <img src="img/producto13.jpg" alt="PPatín freeskate frontal" class="active">
-                        <img src="img/producto13-2.jpg" alt="Patín freeskate lateral">
-                        <img src="img/producto13-3.jpg" alt="Patín freeskate detalle">
-                        <button class="carousel-prev">&lt;</button>
-                        <button class="carousel-next">&gt;</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>Storm Nicoly Pro 80</h3>
-                        <span class="price">$1'100.200</span>
-                        <div class="producto-tallas">
-                            <label for="size-producto13">Talla:</label>
-                            <select id="size-producto13" class="select-talla">
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                                <option value="44">44</option>
-                                <option value="45">45</option>
-                            </select>
-                        </div>
-                        <button class="btn" data-product-id="producto13">Añadir al carrito</button>
-                    </div>
-                </div>
+                <!-- Los productos se cargan dinámicamente desde Supabase -->
+                <p>Cargando patines freeskate...</p>
             </div>
         </div>
     </section>
@@ -148,8 +35,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
     <script src="js/cart-system.js"></script>
+    <script src="js/products.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/script.js"></script>
